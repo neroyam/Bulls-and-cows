@@ -1,0 +1,25 @@
+﻿<Window x:Class="Practic.HelpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Practic"
+        mc:Ignorable="d"
+        Title="Как играть?" Height="543.063" Width="992.016" >
+    <Window.Background>
+        <ImageBrush ImageSource="Resources/perg.png"/>
+    </Window.Background>
+    <Grid>
+        <Label Content="Вам предстоит отгадать код от автомата с напитками, чтобы открыть дверь, находящуюся за ним.&#xA;&#xA;Код состоит из четырех неповторяющихся(!) цифр и для его разгадывания у вас имеется панель набора и &#xD;&#xA;всего 10 попыток. После последней попытки сработает сигнализация, и игра будет проиграна.&#xD;&#xA;&#xD;&#xA;Введите код из четырех цифр и нажмите кнопку ОК, чтобы проверить вашу догадку. На месте кнопки ОК &#xD;&#xA;вы увидите две цифры, которые помогут вам в игре.&#xD;&#xA;&#xD;&#xA;Первая цифра - это количество верно угаданных вами цифр. Вторая цифра означает количество цифр, &#xD;&#xA;которые содержатся в исходном коде, но в вашей версии стоят не на том месте, и вам необходимо&#xD;&#xA;подобрать им другую позицию.&#xD;&#xA;&#xD;&#xA;Если вы не в силах угадать код, вы можете нажать на кнопку &quot;Показать код&quot; и игра завершится.&#xD;&#xA;&#xD;&#xA;Удачи!&#xD;&#xA;&#xA;" HorizontalAlignment="Left" Margin="106,85,0,0" VerticalAlignment="Top" Height="349" Width="806" RenderTransformOrigin="0.5,0.5" FontFamily="Kristen ITC" FontSize="16">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.336"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+
+    </Grid>
+</Window>
