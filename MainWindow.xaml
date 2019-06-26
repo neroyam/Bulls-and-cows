@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Practic"
         mc:Ignorable="d"
-        Title="Главное меню" Height="600" Width="1000" >
+        Title="Главное меню" Height="600" Width="1000" ResizeMode="NoResize" Loaded="MainMenu_Loaded" >
     <Window.Background>
         <ImageBrush ImageSource="Resources/safeback.png"/>
     </Window.Background>

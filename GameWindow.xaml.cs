@@ -20,7 +20,7 @@ namespace Practic
         public GameWindow()
         {
             InitializeComponent();
-      
+          
         }
 
         private void Window_Closed(object sender, EventArgs e)
@@ -31,17 +31,24 @@ namespace Practic
         public List<int> userCode = new List<int>();
 
         public Board board = new Board();
-    
+
+     
+        
+       
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             Generation generation = new Generation();
             mainCode = generation.SetCode();
-                 
+            
         }
+        MediaPlayer beep = new MediaPlayer();
 
         private void Butt1_Click(object sender, RoutedEventArgs e)
         {
+            beep.Open(new Uri(@"D:\Practic\Practic\Resources\boop.mp3", UriKind.Absolute));
+            beep.Play();
+           
             if (Butt00.IsEnabled)
             {
                 if ( Butt00.Content.ToString() == "_______") Butt00.Content = (sender as Button).Content.ToString();
@@ -160,7 +167,8 @@ namespace Practic
 
         private void Button0_Click(object sender, RoutedEventArgs e)
         {
-            
+            beep.Open(new Uri(@"D:\Practic\Practic\Resources\boop.mp3", UriKind.Absolute));
+            beep.Play();
             if (Butt00.IsEnabled)
             {
                 
@@ -503,6 +511,8 @@ namespace Practic
 
         private void HelpButton_Click(object sender, RoutedEventArgs e)
         {
+            beep.Open(new Uri(@"D:\Practic\Practic\Resources\boop.mp3", UriKind.Absolute));
+            beep.Play();
             HelpWindow helpWindow = new HelpWindow();
             helpWindow.Show();
         }
@@ -510,10 +520,13 @@ namespace Practic
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
+            beep.Open(new Uri(@"D:\Practic\Practic\Resources\boop.mp3", UriKind.Absolute));
+            beep.Play();
             //MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             this.Close();
         }
+
         private void Exit_Click(object sender, EventArgs e)
         {
           //  MainWindow mainWindow = new MainWindow();
@@ -523,19 +536,203 @@ namespace Practic
 
         private void CodeButtShow_Click(object sender, RoutedEventArgs e)
         {
+            beep.Open(new Uri(@"D:\Practic\Practic\Resources\boop.mp3", UriKind.Absolute));
+            beep.Play();
             CodeButt0.Content = mainCode[0].ToString();
             CodeButt1.Content = mainCode[1].ToString();
             CodeButt2.Content = mainCode[2].ToString();
             CodeButt3.Content = mainCode[3].ToString();
 
-            //LoseWindow loseWindow = new LoseWindow();
-            //loseWindow.Show();
-            //this.Close();
+            MessageBoxResult result = MessageBox.Show("Хотите сыграть еще раз?", "Поражение", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes) { GameWindow gameWindow = new GameWindow(); gameWindow.Show(); this.Close(); this.mainWindow.Close(); }
+            else this.Close();
         }
 
         private void ExitButtonFin_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void ButtDel_Click(object sender, RoutedEventArgs e)
+        {
+            beep.Open(new Uri(@"D:\Practic\Practic\Resources\boop.mp3", UriKind.Absolute));
+            beep.Play();
+            if (Butt00.IsEnabled)
+            {
+
+                if (Butt00.Content.ToString() != "_______" && Butt10.Content.ToString() == "_______") Butt00.Content = "_______";
+                else if (Butt10.Content.ToString() != "_______" && Butt20.Content.ToString() == "_______") Butt10.Content = "_______";
+                else if (Butt20.Content.ToString() != "_______" && Butt30.Content.ToString() == "_______") Butt20.Content = "_______";
+                else  Butt30.Content = "_______";
+                Button0.IsEnabled = false;
+
+            }
+            else if (Butt01.IsEnabled)
+            {
+                if (Butt01.Content.ToString() != "_______" && Butt11.Content.ToString() == "_______") Butt01.Content = "_______";
+                else if (Butt11.Content.ToString() != "_______" && Butt21.Content.ToString() == "_______") Butt11.Content = "_______";
+                else if (Butt21.Content.ToString() != "_______" && Butt31.Content.ToString() == "_______") Butt21.Content = "_______";
+                else Butt31.Content = "_______";
+                Button1.IsEnabled = false;
+
+            }
+            else if (Butt02.IsEnabled)
+            {
+                if (Butt02.Content.ToString() != "_______" && Butt12.Content.ToString() == "_______") Butt02.Content = "_______";
+                else if (Butt12.Content.ToString() != "_______" && Butt22.Content.ToString() == "_______") Butt12.Content = "_______";
+                else if (Butt22.Content.ToString() != "_______" && Butt32.Content.ToString() == "_______") Butt22.Content = "_______";
+                else Butt32.Content = "_______";
+                Button2.IsEnabled = false;
+
+            }
+            else if (Butt03.IsEnabled)
+            {
+                if (Butt03.Content.ToString() != "_______" && Butt13.Content.ToString() == "_______") Butt03.Content = "_______";
+                else if (Butt13.Content.ToString() != "_______" && Butt23.Content.ToString() == "_______") Butt13.Content = "_______";
+                else if (Butt23.Content.ToString() != "_______" && Butt33.Content.ToString() == "_______") Butt23.Content = "_______";
+                else Butt33.Content = "_______";
+                Button3.IsEnabled = false;
+
+            }
+            else if (Butt04.IsEnabled)
+            {
+                if (Butt04.Content.ToString() != "_______" && Butt14.Content.ToString() == "_______") Butt04.Content = "_______";
+                else if (Butt14.Content.ToString() != "_______" && Butt24.Content.ToString() == "_______") Butt14.Content = "_______";
+                else if (Butt24.Content.ToString() != "_______" && Butt34.Content.ToString() == "_______") Butt24.Content = "_______";
+                else Butt34.Content = "_______";
+                Button4.IsEnabled = false;
+
+            }
+            else if (Butt05.IsEnabled)
+            {
+                if (Butt05.Content.ToString() != "_______" && Butt15.Content.ToString() == "_______") Butt05.Content = "_______";
+                else if (Butt15.Content.ToString() != "_______" && Butt25.Content.ToString() == "_______") Butt15.Content = "_______";
+                else if (Butt25.Content.ToString() != "_______" && Butt35.Content.ToString() == "_______") Butt25.Content = "_______";
+                else Butt35.Content = "_______";
+                Button5.IsEnabled = false;
+
+            }
+            else if (Butt06.IsEnabled)
+            {
+                if (Butt06.Content.ToString() != "_______" && Butt16.Content.ToString() == "_______") Butt06.Content = "_______";
+                else if (Butt16.Content.ToString() != "_______" && Butt26.Content.ToString() == "_______") Butt16.Content = "_______";
+                else if (Butt26.Content.ToString() != "_______" && Butt36.Content.ToString() == "_______") Butt26.Content = "_______";
+                else Butt36.Content = "_______";
+                Button6.IsEnabled = false;
+
+            }
+            else if (Butt07.IsEnabled)
+            {
+                if (Butt07.Content.ToString() != "_______" && Butt17.Content.ToString() == "_______") Butt07.Content = "_______";
+                else if (Butt17.Content.ToString() != "_______" && Butt27.Content.ToString() == "_______") Butt17.Content = "_______";
+                else if (Butt27.Content.ToString() != "_______" && Butt37.Content.ToString() == "_______") Butt27.Content = "_______";
+                else Butt37.Content = "_______";
+                Button7.IsEnabled = false;
+
+            }
+            else if (Butt08.IsEnabled)
+            {
+                if (Butt08.Content.ToString() != "_______" && Butt18.Content.ToString() == "_______") Butt08.Content = "_______";
+                else if (Butt18.Content.ToString() != "_______" && Butt28.Content.ToString() == "_______") Butt18.Content = "_______";
+                else if (Butt28.Content.ToString() != "_______" && Butt38.Content.ToString() == "_______") Butt28.Content = "_______";
+                else Butt38.Content = "_______";
+                Button8.IsEnabled = false;
+
+            }
+            else if (Butt09.IsEnabled)
+            {
+                if (Butt09.Content.ToString() != "_______" && Butt19.Content.ToString() == "_______") Butt09.Content = "_______";
+                else if (Butt19.Content.ToString() != "_______" && Butt29.Content.ToString() == "_______") Butt19.Content = "_______";
+                else if (Butt29.Content.ToString() != "_______" && Butt39.Content.ToString() == "_______") Butt29.Content = "_______";
+                else Butt39.Content = "_______";
+                Button9.IsEnabled = false;
+
+            }
+
+        }
+
+        private void ButtClr_Click(object sender, RoutedEventArgs e)
+        {
+            beep.Open(new Uri(@"D:\Practic\Practic\Resources\boop.mp3", UriKind.Absolute));
+            beep.Play();
+            if (Butt00.IsEnabled)
+            {
+
+                Butt00.Content = "_______";
+                Butt10.Content = "_______";
+                Butt20.Content = "_______";
+                Butt30.Content = "_______";
+                
+
+            }
+            else if (Butt01.IsEnabled)
+            {
+                Butt01.Content = "_______";
+                Butt11.Content = "_______";
+                Butt21.Content = "_______";
+                Butt31.Content = "_______";
+
+
+            }
+            else if (Butt02.IsEnabled)
+            {
+                Butt02.Content = "_______";
+                Butt12.Content = "_______";
+                Butt22.Content = "_______";
+                Butt32.Content = "_______";
+
+            }
+            else if (Butt03.IsEnabled)
+            {
+                Butt03.Content = "_______";
+                Butt13.Content = "_______";
+                Butt23.Content = "_______";
+                Butt33.Content = "_______";
+            }
+            else if (Butt04.IsEnabled)
+            {
+                Butt04.Content = "_______";
+                Butt14.Content = "_______";
+                Butt24.Content = "_______";
+                Butt34.Content = "_______";
+            }
+            else if (Butt05.IsEnabled)
+            {
+                Butt05.Content = "_______";
+                Butt15.Content = "_______";
+                Butt25.Content = "_______";
+                Butt35.Content = "_______";
+            }
+            else if (Butt06.IsEnabled)
+            {
+                Butt06.Content = "_______";
+                Butt16.Content = "_______";
+                Butt26.Content = "_______";
+                Butt36.Content = "_______";
+            }
+            else if (Butt07.IsEnabled)
+            {
+                Butt07.Content = "_______";
+                Butt17.Content = "_______";
+                Butt27.Content = "_______";
+                Butt37.Content = "_______";
+            }
+            else if (Butt08.IsEnabled)
+            {
+                Butt08.Content = "_______";
+                Butt18.Content = "_______";
+                Butt28.Content = "_______";
+                Butt38.Content = "_______";
+            }
+            else if (Butt09.IsEnabled)
+            {
+                Butt09.Content = "_______";
+                Butt19.Content = "_______";
+                Butt29.Content = "_______";
+                Butt39.Content = "_______";
+
+            }
+
         }
     }
 }

@@ -30,11 +30,14 @@ namespace Practic
         {
             MainMenu.Close();
         }
+        public MediaPlayer beep = new MediaPlayer();
 
         private void HelpButton_Click(object sender, RoutedEventArgs e)
         {
             HelpWindow helpWindow = new HelpWindow();
             helpWindow.Show();
+            beep.Open(new Uri(@"D:\Practic\Practic\Resources\boop.mp3", UriKind.Absolute));
+            beep.Play();
         }
 
   
@@ -44,7 +47,13 @@ namespace Practic
           GameWindow gameWindow = new GameWindow();
             gameWindow.Show();
             this.Close();
+           
+            beep.Open(new Uri(@"D:\Practic\Practic\Resources\boop.mp3", UriKind.Absolute));
+            beep.Play();
         }
 
+        private void MainMenu_Loaded(object sender, RoutedEventArgs e)
+        { 
+        }
     }
 }

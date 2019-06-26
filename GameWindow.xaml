@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Practic"
         mc:Ignorable="d"
-        Title="GameWindow" Height="600" Width="1000" Closed="Exit_Click" Loaded="Window_Loaded">
+        Title="GameWindow" Height="600" Width="1000" Closed="Exit_Click" Loaded="Window_Loaded" ResizeMode="NoResize">
     <Window.Background>
         <ImageBrush ImageSource="Resources/dipmab.jpg"/>
     </Window.Background>
@@ -116,8 +116,8 @@
             <Button x:Name="Butt8" Grid.Column="1" Grid.Row="2" Margin="2" Content="8" FontSize="30" Opacity="0.9" Click="Butt1_Click"  />
             <Button x:Name="Butt9" Grid.Column="2" Grid.Row="2" Margin="2" Content="9" FontSize="30" Opacity="0.9" Click="Butt1_Click"  />
             <Button x:Name="Butt0" Grid.Column="1" Grid.Row="3" Margin="2" Content="0" FontSize="30" Opacity="0.9" Click="Butt1_Click"  />
-            <Button x:Name="ButtDel" Grid.Column="0" Grid.Row="3" Margin="2" Content="Del" FontSize="30" Opacity="0.9"  />
-            <Button x:Name="ButtClr" Grid.Column="2" Grid.Row="3" Margin="2" Content="Clr" FontSize="30" Opacity="0.9"  />
+            <Button x:Name="ButtDel" Grid.Column="0" Grid.Row="3" Margin="2" Content="Del" FontSize="30" Opacity="0.9" Click="ButtDel_Click"  />
+            <Button x:Name="ButtClr" Grid.Column="2" Grid.Row="3" Margin="2,2,2,0" Content="Clr" FontSize="30" Opacity="0.9" Height="45" VerticalAlignment="Top" Click="ButtClr_Click"  />
 
         </Grid>
         <Grid x:Name="MainCodeGrid" HorizontalAlignment="Left" Height="49" Margin="648,45,0,0" VerticalAlignment="Top" Width="291" Opacity="0.9">
@@ -145,4 +145,5 @@
         <Button x:Name="ExitButton" Content="Выход в меню" HorizontalAlignment="Left" Margin="786,175,0,0" VerticalAlignment="Top" Width="153" Height="45" Opacity="0.9" FontSize="20" FontFamily="Kristen ITC" Click="ExitButton_Click"/>
 
     </Grid>
+    
 </Window>
